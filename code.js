@@ -32,7 +32,7 @@ var app = new Vue ( {
 
     methods: {
         getPosts: function() {
-            fetch("http://localhost:3000/posts").then(function(res) {
+            fetch("https://collectors--blog.herokuapp.com/posts").then(function(res) {
                 res.json().then(function(data) {
                     app.posts = data.posts;
                 });
@@ -47,7 +47,7 @@ var app = new Vue ( {
                 image: this.new_image,
                 text: this.new_text,
             };
-            fetch("http://localhost:3000/posts", {
+            fetch("https://collectors--blog.herokuapp.com/posts", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
