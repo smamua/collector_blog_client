@@ -24,15 +24,24 @@ var app = new Vue ( {
         new_category: "all",
         new_image: "",
         new_text: "",
+        show_delete: true,
+        heroku_url:"https://collectors--blog.herokuapp.com/posts"
     },
 
     created: function() {
         this.getPosts();
+        window.addEventListener("keyup", this.KeyEvents)
     },
 
     methods: {
+      deletePost: function(post){
+        
+      }
+      KeyEvents: function (e) {
+
+      },
         getPosts: function() {
-            fetch("https://collectors--blog.herokuapp.com/posts").then(function(res) {
+            fetch("http://localhost:3000/posts").then(function(res) {
                 res.json().then(function(data) {
                     app.posts = data.posts;
                 });
@@ -47,7 +56,7 @@ var app = new Vue ( {
                 image: this.new_image,
                 text: this.new_text,
             };
-            fetch("https://collectors--blog.herokuapp.com/posts", {
+            fetch("http://localhost:3000/posts", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"

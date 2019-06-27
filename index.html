@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
@@ -8,20 +8,6 @@
 </head>
 
 <div id="app" v-cloak>
-
-
-  <!-- <div v-if="page == 'post'">
-    <div class="">Create Post</div>
-    Enter title: <input v-model="new_post.title" type="text"><br>
-    Enter caption: <input v-model="new_post.text" type="text"><br>
-    Pick a category:
-    <select v-model="new_post.category">
-      <option :value="new_post.category" v-for="category in categories">{{category}}</option>
-    </select>
-    Enter image link: <input v-model="new_post.image" type="text"><br>
-    Enter name: <input v-model="new_post.author" type="text"><br>
-    <button @click="addPost">Submit</button><br>
-  </div> -->
   <v-app>
     <v-content>
       <v-toolbar fixed app>
@@ -64,6 +50,11 @@
                         <v-img
                             v-bind:src="post.image"
                             height="200">
+                            <v-btn
+                            icon class="right"
+                            v-if="show_delete"
+                            @click="deletePost"><v-icon color="red">delete<v-icon>
+                            </v-btn>
                         </v-img>
                         <v-card-title>
                             <span class="headline text-uppercase">
