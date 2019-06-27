@@ -35,13 +35,13 @@ var app = new Vue ( {
 
     methods: {
       deletePost: function(post){
-        
+
       }
       KeyEvents: function (e) {
 
       },
         getPosts: function() {
-            fetch("http://localhost:3000/posts").then(function(res) {
+            fetch(this.heroku_url).then(function(res) {
                 res.json().then(function(data) {
                     app.posts = data.posts;
                 });
@@ -56,7 +56,7 @@ var app = new Vue ( {
                 image: this.new_image,
                 text: this.new_text,
             };
-            fetch("http://localhost:3000/posts", {
+            fetch("this.heroku_url", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
