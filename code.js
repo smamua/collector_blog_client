@@ -24,7 +24,7 @@ var app = new Vue ( {
         new_category: "all",
         new_image: "",
         new_text: "",
-        show_delete: true,
+        // show_delete: true,
         heroku_url:"https://collectors--blog.herokuapp.com/posts"
     },
 
