@@ -56,7 +56,7 @@ var app = new Vue ( {
                 image: this.new_image,
                 text: this.new_text,
             };
-            fetch("this.heroku_url", {
+            fetch(this.heroku_url, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
